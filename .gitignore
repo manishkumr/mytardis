@@ -35,12 +35,14 @@ webpack-stats.json
 tardis_db
 tardis/apps/*
 !tardis/apps/__init__.py
+!tardis/apps/anzsrc_codes
 !tardis/apps/deep_storage_download_mapper
 !tardis/apps/dl_mapper_df_dir_only
 !tardis/apps/equipment
 !tardis/apps/filepicker
 !tardis/apps/mx_views
 !tardis/apps/oaipmh
+!tardis/apps/publication_workflow
 !tardis/apps/openid_migration
 !tardis/apps/push_to
 !tardis/apps/related_info
