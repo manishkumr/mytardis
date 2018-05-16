@@ -29,6 +29,8 @@ TEMPLATES = [
                 '.manage_account_processor',
                 'tardis.tardis_portal.context_processors'
                 '.google_analytics',
+                'social_django.context_processors.backends',
+                'social_django.context_processors.login_redirect',
             ],
             'loaders': [
                 'django.template.loaders.app_directories.Loader',

@@ -422,6 +422,8 @@ urlpatterns = patterns(
 
     # Class-based views that may be overriden by apps
     (r'', include(overridable_urls)),
+    #openid
+    url('', include('social_django.urls', namespace='social')),
 )
 
 # Handle static files from /static
