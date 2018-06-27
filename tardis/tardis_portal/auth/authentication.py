@@ -16,7 +16,7 @@ from tardis.tardis_portal.auth import localdb_auth
 from tardis.tardis_portal.forms import createLinkedUserAuthenticationForm
 from tardis.tardis_portal.shortcuts import render_response_index
 
-from tardis.apps.openid_migration.models import OpenidUserMigration,OpenidACLMigration
+from tardis.apps.openid_migration.models import OpenidUserMigration, OpenidACLMigration
 
 logger = logging.getLogger(__name__)
 
