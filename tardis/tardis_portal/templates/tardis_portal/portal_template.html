@@ -138,6 +138,15 @@
                     </a>
                   </li>
                   {% endif %}
+                   {% if openid_migration_enabled %}
+                      <li>
+                        <a href="{% url 'tardis.apps.openid_migration.views.migrate_accounts' %}">
+                      <!-- Font Awesome needs a "link" icon! -->
+                            <i class="fa fa-tags"></i>
+                      Migrate Accounts
+                        </a>
+                      </li>
+                   {% endif %}
                   {% if is_superuser %}
                   <li>
                     <a href="{% url 'admin:index' %}">

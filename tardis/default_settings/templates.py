@@ -31,6 +31,8 @@ TEMPLATES = [
                 '.google_analytics',
                 'social_django.context_processors.backends',
                 'social_django.context_processors.login_redirect',
+                'tardis.tardis_portal.context_processors'
+                '.openid_migration_processor',
             ],
             'loaders': [
                 'django.template.loaders.app_directories.Loader',
