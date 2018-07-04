@@ -138,7 +138,7 @@
                     </a>
                   </li>
                   {% endif %}
-                   {% if openid_migration_enabled %}
+                   {% if perms.tardis_portal.change_userauthentication and openid_migration_enabled %}
                       <li>
                         <a href="{% url 'tardis.apps.openid_migration.views.migrate_accounts' %}">
                       <!-- Font Awesome needs a "link" icon! -->
