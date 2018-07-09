@@ -95,6 +95,7 @@ class UserAuthentication(models.Model):
     userProfile = models.ForeignKey(UserProfile)
     username = models.CharField(max_length=50)
     authenticationMethod = models.CharField(max_length=30, choices=CHOICES)
+    approved = models.BooleanField(default=True)
 
     class Meta:
         app_label = 'tardis_portal'
