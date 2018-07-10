@@ -4,6 +4,7 @@ from django.conf import settings
 from django.contrib.auth.models import User, Group
 from django.contrib.contenttypes.models import ContentType
 from django.contrib.contenttypes.fields import GenericForeignKey
+from django.contrib.auth.models import Permission
 
 from django.db import models
 from django.db.models import Q
@@ -95,7 +96,7 @@ class UserAuthentication(models.Model):
     userProfile = models.ForeignKey(UserProfile)
     username = models.CharField(max_length=50)
     authenticationMethod = models.CharField(max_length=30, choices=CHOICES)
-    approved = models.BooleanField(default=True)
+    approved = models.BooleanField(default=False)
 
     class Meta:
         app_label = 'tardis_portal'
@@ -114,6 +115,23 @@ class UserAuthentication(models.Model):
 
     def __unicode__(self):
         return self.username + ' - ' + self.getAuthMethodDescription()
+
+    def save(self, *args, **kwargs):
+        if self.approved:
+            # get linked user profile
+            user_profile = self.userProfile
+            user = user_profile.user
+            # add user permissions
+            user.user_permissions.add(Permission.objects.get(codename='add_experiment'))
+            user.user_permissions.add(Permission.objects.get(codename='change_experiment'))
+            user.user_permissions.add(Permission.objects.get(codename='change_group'))
+            user.user_permissions.add(Permission.objects.get(codename='change_userauthentication'))
+            user.user_permissions.add(Permission.objects.get(codename='change_objectacl'))
+            user.user_permissions.add(Permission.objects.get(codename='add_datafile'))
+            user.user_permissions.add(Permission.objects.get(codename='change_dataset'))
+
+        super(UserAuthentication, self).save(*args, **kwargs)
+
 
 
 # this is currently unused, but is the state I would like to reach, ie.
