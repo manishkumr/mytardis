@@ -15,8 +15,8 @@
 {% render_bundle 'tardis_portal_view_experiment_init' %}
 {% render_bundle 'tardis_portal_view_experiment_share' %}
 {% if pub_workflow_enabled %}
-<script type="text/javascript" src="/static/publication-actions/publication_actions.js"></script>
-<script type="text/javascript" src="/static/publication-form/publication_form.js"></script>
+<script type="text/javascript" src="{% static 'publication-actions/publication_actions.js' %}"></script>
+<script type="text/javascript" src="{% static 'publication-form/publication_form.js' %}"></script>
 {% endif %}
 
 {% endblock %}
