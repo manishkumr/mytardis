@@ -42,7 +42,7 @@
   </div>  <!-- class="modal-dialog" -->
 </div>
 
-<div class="page-header ng-cloak">
+<div class="page-header>
   {% if experiment.is_publication %}
     <h4>
         Publication
@@ -54,11 +54,6 @@
     <h4>Experiment</h4>
   {% endif %}
   {% if not experiment.public %}
-  {% if pub_workflow_enabled %}
-  <div class="pull-right"
-       ng-controller="PublicationActionsController as pubActionsCtrl"
-       ng-init="pubActionsCtrl.init(null, {{ experiment.id }})">
-  {% else %}
   <div class="pull-right">
   {% endif %}
   {% if is_owner and pub_workflow_enabled %}
