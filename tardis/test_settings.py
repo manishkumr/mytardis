@@ -176,3 +176,9 @@ CALCULATE_CHECKSUMS_METHODS = {
     'storages.backends.s3boto3.S3Boto3Storage':
         'tardis.apps.s3utils.utils.calculate_checksums'
 }
+
+# For testing hsm app:
+RECALL_URI_TEMPLATES = {
+  'tardis.apps.hsm.storage.HsmFileSystemStorage':
+  '/api/v1/hsm_replica/{dfo_id}/recall/'
+}
