@@ -41,6 +41,7 @@
     "mini-css-extract-plugin": "^0.11.2",
     "minimatch": "^3.0.2",
     "moment": "^2.29.0",
+    "ng-dialog": "^1.4.0",
     "pluralize": "^8.0.0",
     "prop-types": "^15.7.2",
     "query-string": "^6.13.1",
